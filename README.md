@@ -25,20 +25,39 @@ Rice is a staple food worldwide, and accurate classification of rice varieties i
 
 ---
 
-## 🚀 Key Results
-- **Custom CNN**: Achieved strong performance with careful tuning, but required more training time and resources.  
-- **MobileNetV2**: With partial fine-tuning, achieved **99.03% test accuracy** and **0.99 precision/recall/F1-score**, while being lightweight and efficient for deployment on edge devices.  
+## 📈 Final Results
+
+The models were evaluated on the Rice Image Dataset (75,000 images, 5 varieties). Performance was measured using accuracy, precision, recall, and F1-score.
+
+| Model Variant       | Test Accuracy | Precision | Recall | F1-Score | Notes |
+|---------------------|---------------|-----------|--------|----------|-------|
+| Custom CNN (A4)     | 98.30%        | 0.98      | 0.98   | 0.983    | Strong performance after tuning, but higher training cost |
+| MobileNetV2 (B5)    | **99.03%**    | 0.99      | 0.99   | 0.99     | Best overall performance with partial fine-tuning; lightweight and efficient |
+
+### 🔍 Key Insights
+- **Custom CNN**: Achieved competitive accuracy with careful tuning, but required more computational resources and longer training time.  
+- **MobileNetV2**: Outperformed CNN in both accuracy and efficiency. Its lightweight design makes it suitable for deployment on mobile and edge devices.  
+- **Robustness**: MobileNetV2 maintained strong performance under noisy and varied lighting conditions, confirming its suitability for real-world agricultural applications.  
+
+> **Conclusion**: MobileNetV2 with partial fine-tuning is the most effective solution, achieving 99.03% accuracy while remaining efficient and deployable in resource-constrained environments.
+ 
 
 > Findings demonstrate that lightweight transfer learning models like MobileNetV2 are highly suitable for real-world agricultural applications.
 
 ---
 
 ## 📂 Repository Structure
+
 ├── data_preprocessing/       # Scripts for dataset preparation and augmentation
+
 ├── cnn_model/                # Custom CNN implementation (baseline + tuned)
+
 ├── mobilenetv2_model/        # MobileNetV2 implementation (transfer learning + fine-tuning)
+
 ├── model_comparison/         # Evaluation and comparison scripts
+
 ├── results/                  # Accuracy, loss curves, confusion matrices
+
 └── README.md                 # Project documentation
 
 
